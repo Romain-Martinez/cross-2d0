@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 
 const Task = (props) => {
 
@@ -9,14 +9,19 @@ const Task = (props) => {
         <View style={styles.square}></View>
         <Text style={styles.itemText}>{props.text}</Text>
       </View>
-      <View style={styles.circular}></View>
+      <View style={styles.wrapper}>
+        <View style={styles.circular}></View>
+        <TouchableOpacity onPress={() => props.complete()} style={styles.circular}>
+          <Text style={styles.WhiteDelete}>Delete</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#7AC4B6',
     padding: 15,
     borderRadius: 10,
     flexDirection: 'row',
@@ -32,7 +37,7 @@ const styles = StyleSheet.create({
   square: {
     width: 24,
     height: 24,
-    backgroundColor: '#55BCF6',
+    backgroundColor: 'yellow',
     opacity: 0.4,
     borderRadius: 5,
     marginRight: 15,
@@ -41,12 +46,20 @@ const styles = StyleSheet.create({
     maxWidth: '80%',
   },
   circular: {
-    width: 12,
-    height: 12,
-    borderColor: '#55BCF6',
+    width: 45,
+    height: 20,
+    borderColor: '#3d5afe',
+    backgroundColor: '#3d5afe',
     borderWidth: 2,
     borderRadius: 5,
   },
+  wrapper: {
+    flexDirection: 'row'
+  },
+  WhiteDelete: {
+    color: 'white',
+  }
+
 });
 
 export default Task;
