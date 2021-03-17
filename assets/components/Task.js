@@ -4,6 +4,19 @@ import { View, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 const Task = (props) => {
 
   return (
+    /*
+            <CheckBox
+          value={isSelected}
+          onValueChange={setSelection}
+          style={styles.checkbox}
+        />
+    */
+   /*
+   <Text style={{
+     color: isSelected ? 'grey' : 'black',
+     textDecorationLine: isSelected ? 'line-through' : 'none',
+    }}>{props.text}</Text>
+   */
     <View style={styles.item}>
       <View style={styles.itemLeft}>
         <View style={styles.square}></View>
