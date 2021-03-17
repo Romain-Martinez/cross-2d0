@@ -10,7 +10,6 @@ const Task = (props) => {
         <Text style={styles.itemText}>{props.text}</Text>
       </View>
       <View style={styles.wrapper}>
-        <View style={styles.circular}></View>
         <TouchableOpacity onPress={() => props.complete()} style={styles.circular}>
           <Text style={styles.WhiteDelete}>Delete</Text>
         </TouchableOpacity>
